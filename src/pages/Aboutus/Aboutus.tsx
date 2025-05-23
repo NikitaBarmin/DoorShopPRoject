@@ -8,11 +8,14 @@ import Button from '../../components/Button/Button';
 import classNames from 'classnames';
 import TrustCard from '../../components/TrustCard/TrustCard';
 
+
 /*Ф */
 
 function Aboutus() {
 	const center = useMemo(() => [56.22781, 43.380813] as [number, number], []);
 	const zoom = useMemo(() => 16, []);
+
+
 	return (
 
 		<div className={styles.aboutus}>
@@ -24,10 +27,10 @@ function Aboutus() {
 						<p className={styles['aboutus-text']}>Barmin — динамично развивающаяся компания, которая с момента основания в 2025 году стремится задавать новые стандарты в своей отрасли. Мы сочетаем передовые технологии, продуманные решения и клиентоориентированный подход, чтобы предлагать рынку только лучшее.</p>
 					</div>
 					<div className={styles['aboutus_secondBlock']}>
-						<img src="/aboutUs-secondBlock.jpg" alt="Серая межкомнатная дверь" />
+						<img src="/main/aboutUs-secondBlock.webp" alt="Серая межкомнатная дверь в интерьере" tabIndex={0} loading="lazy" />
 					</div>
 					<div className={styles['aboutus_thirdBlock']}>
-						<img src="/aboutUs-thirdBlock.jpg" alt="Бежевая межкомнатная дверь" />
+						<img src="/main/aboutUs-thirdBlock.webp" alt="Бежевая межкомнатная дверь в интерьере" tabIndex={0} loading="lazy" />
 						<p className={styles['aboutus-text']}>Это современное производство премиальных дверей в России, где передовые технологии встречаются с бескомпромиссным качеством. Благодаря собственному производству в России мы предлагаем двери в 2 раза выгоднее европейских аналогов, без ущерба для качества.</p>
 					</div>
 				</div>
@@ -63,9 +66,9 @@ function Aboutus() {
 			</section>
 			<section className={styles.video}>
 				<div className={styles['video__wrapper']}>
-					<a data-youtubelightbox className={styles['video__link']} href="https://www.youtube.com/watch?v=kWICdgsWgLU" target="_blank" rel="noreferrer">
-						<img className={styles['video__bg']} src="/public/video-img.png" alt="Видеофон" />
-						<img className={styles['video__button']} src="/public/play-button.svg" alt="Кнопка" />
+					<a data-youtubelightbox className={styles['video__link']} href="https://www.youtube.com/watch?v=kWICdgsWgLU" target="_blank" rel="noreferrer" tabIndex={0} aria-label="Смотреть видео о компании">
+						<img className={styles['video__bg']} src="/main/video-img.webp" alt="Видеофон для ролика о компании" loading="lazy" />
+						<img className={styles['video__button']} src="/svg-icons/play-button.svg" alt="Кнопка воспроизведения видео" loading="lazy" />
 					</a>
 				</div>
 			</section>
@@ -81,7 +84,7 @@ function Aboutus() {
 			</section>
 			<footer className={styles.footer}>
 				<div className={styles['footer__wrapper']}>
-					<img src="/public/logo.svg" alt="" />
+					<img src="/svg-icons/logo.svg" alt="Логотип компании Door Shop" tabIndex={0} loading="lazy" />
 					<div className={styles['footer-elements']}>
 						<NavLink to='/' className={({ isActive }) => classNames(styles['link'], {
 							[styles['activate']]: isActive
@@ -92,17 +95,17 @@ function Aboutus() {
 						<Feedback />
 					</div>
 					<div className={styles['footer__img']}>
-						<a href="https://vk.com/noeticaa" target="_blank" rel="noreferrer">
-							<img src="/public/vk.svg" alt="" />
+						<a href="https://vk.com/noeticaa" target="_blank" rel="noreferrer" tabIndex={0} aria-label="VK">
+							<img src="/svg-icons/vk.svg" alt="VK" loading="lazy" />
 						</a>
-						<a href="https://instagram.com" target="_blank" rel="noreferrer">
-							<img src="/public/instagram.svg" alt="" />
+						<a href="https://instagram.com" target="_blank" rel="noreferrer" tabIndex={0} aria-label="Instagram">
+							<img src="/svg-icons/instagram.svg" alt="Instagram" loading="lazy" />
 						</a>
-						<a href="https://www.youtube.com/@НикитаБармин-и8п" target="_blank" rel="noreferrer">
-							<img src="/public/youtube.svg" alt="" />
+						<a href="https://www.youtube.com/@НикитаБармин-и8п" target="_blank" rel="noreferrer" tabIndex={0} aria-label="YouTube">
+							<img src="/svg-icons/youtube.svg" alt="YouTube" loading="lazy" />
 						</a>
-						<a href="https://t.me/Burbalbed" target="_blank" rel="noreferrer">
-							<img src="/public/facebook-logo.svg" alt="" />
+						<a href="https://t.me/Burbalbed" target="_blank" rel="noreferrer" tabIndex={0} aria-label="Telegram">
+							<img src="/svg-icons/telegramlogo.svg" alt="Telegram" loading="lazy" />
 						</a>
 					</div>
 					<div className={styles['footer__adress']}>

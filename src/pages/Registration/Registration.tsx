@@ -11,6 +11,7 @@ import { registration, userActions } from '../../store/user.slice';
 import type { RootState } from '../../store/store';
 
 
+
 export type RegistrationForm = {
 	email: {
 		value: string
@@ -24,6 +25,7 @@ export type RegistrationForm = {
 }
 
 function Login() {
+
 
 	/* 	const [error, setError] = useState<string | null>(null); */
 	const navigate = useNavigate();
@@ -41,7 +43,6 @@ function Login() {
 		e.preventDefault();
 		dispatch(userActions.clearRegistrationError());
 		const target = e.target as typeof e.target & RegistrationForm;
-		console.log(target);
 		const {email, password, name} = target;
 		await sendRegistration(email.value, password.value, name.value);
 	};

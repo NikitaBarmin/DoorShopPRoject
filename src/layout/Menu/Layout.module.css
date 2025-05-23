@@ -11,7 +11,7 @@
       #242b33 11.98%,
       rgba(45, 52, 60, 0.38) 51.04%,
       #242b33 92.19%),
-    url(/public/image.png);
+    url(/public/auth-background.webp);
   background-size: cover;
   /* Масштабируем изображение, чтобы заполнить всю область */
 }

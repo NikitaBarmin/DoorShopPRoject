@@ -18,8 +18,8 @@ function ProfileButton() {
 
 	return (
 		<div className={styles.container}>
-			<button className={classNames(styles.contacts, {[styles['activate']]: location.pathname === '/doors'})} onClick={() => setShowProfile(!showProfile)}>
-				<img className={styles.profile} src = "/profile.svg" alt = 'Профиль'/>
+			<button className={classNames(styles.contacts, {[styles['activate']]: location.pathname === '/doors'})} onClick={() => setShowProfile(!showProfile)} tabIndex={0} aria-label="Открыть профиль">
+				<img className={styles.profile} src = "/svg-icons/profile.svg" alt = 'Профиль пользователя'/>
 				<div className= {classNames(styles.modal, {
 					[styles['open']]: showProfile === true
 			    })}> 

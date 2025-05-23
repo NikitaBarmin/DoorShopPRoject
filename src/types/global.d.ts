@@ -1,7 +1,8 @@
 declare global {
   interface Window {
-    ymaps?: typeof ymaps; // Используем typeof для ссылки на глобальный объект ymaps
+    ymaps?: unknown;
   }
-
-  const ymaps: typeof ymaps;  // Объявляем глобальную переменную ymaps
+  // Глобальный объект ymaps, предоставляемый Яндекс.Картами
+  declare const ymaps: unknown;
 }
+export {};

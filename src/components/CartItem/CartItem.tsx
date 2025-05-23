@@ -29,15 +29,15 @@ function CartItem(props: CartItemProps) {
 				</div>
 			</div>		
 			<div className={styles['actions']}>
-				<button className={styles['minus']} onClick={descrease}>
-					<img src="/minus-icon.svg" alt="Удалить из корзины" />
+				<button className={styles['minus']} onClick={descrease} tabIndex={0} aria-label="Уменьшить количество">
+					<img src="/svg-icons/minus-icon.svg" alt="Уменьшить количество товара" />
 				</button>
 				<div className={styles['number']}>{props.count}</div>
-				<button className={styles['plus']} onClick={increase}>
-					<img src="/plus-icon.svg" alt="Добавить в корзину" />
+				<button className={styles['plus']} onClick={increase} tabIndex={0} aria-label="Увеличить количество">
+					<img src="/svg-icons/plus-icon.svg" alt="Увеличить количество товара" />
 				</button>
-				<button className={styles['remove']} onClick={remove}>
-					<img src="/delete-icon.svg" alt="Удалить все" />
+				<button className={styles['remove']} onClick={remove} tabIndex={0} aria-label="Удалить товар из корзины">
+					<img src="/svg-icons/delete-icon.svg" alt="Удалить товар из корзины" />
 				</button>
 			</div>
 		</div>

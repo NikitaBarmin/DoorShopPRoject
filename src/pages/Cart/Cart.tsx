@@ -61,6 +61,7 @@ function Cart() {
 		loadAllItems();
 	}, [items]);
 
+
 	return  (
 		<div className={styles.cart}>
 			<div className={styles['cart__wrapper']}>

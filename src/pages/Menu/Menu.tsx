@@ -45,6 +45,9 @@ function Menu() {
 	useEffect(() => {
 		getDoors();
 	}, []);
+
+
+
 	return (
 		<div className={styles['menu__wrapper']}>
 			<div className={styles['head']}>

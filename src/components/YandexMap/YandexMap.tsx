@@ -3,29 +3,29 @@ import type { YandexMapProps } from './YandexMap.props';
 
 const YandexMap: React.FC<YandexMapProps> = React.memo(({ center, zoom }) => {
 	const mapRef = useRef<HTMLDivElement>(null);
-
-	console.log('Яндекс карта зарендерилась ')
+	const mapInstance = useRef<unknown>(null);
 
 	const loadMap = useCallback(() => {
-		ymaps.ready(() => {
-			const map = new ymaps.Map(mapRef.current, {
+		if (typeof ymaps === 'undefined') return;
+		(ymaps as unknown as { ready: (cb: () => void) => void }).ready(() => {
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			const map = new (ymaps as any).Map(mapRef.current, {
 				center: center,
 				zoom: zoom,
-				controls: ['zoomControl', 'fullscreenControl'],
+				controls: ['zoomControl', 'fullscreenControl']
 			});
 
-			const placemark = new ymaps.Placemark(center, {
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
+			const placemark = new (ymaps as any).Placemark(center, {
 				balloonContent: `
           <div class="balloon__address">Тут никита бармин живет</div>
-        `,
+        `
 			});
 
 			map.geoObjects.add(placemark);
 
 			// Сохраняем экземпляр карты
-			if (mapRef.current) {
-				mapRef.current.instance = map;
-			}
+			mapInstance.current = map;
 		});
 	}, [center, zoom]);
 
@@ -33,9 +33,9 @@ const YandexMap: React.FC<YandexMapProps> = React.memo(({ center, zoom }) => {
 		loadMap();
 
 		return () => {
-			if (mapRef.current && mapRef.current.instance) {
-				// Уничтожаем экземпляр карты
-				mapRef.current.instance.destroy();
+			if (mapInstance.current) {
+				(mapInstance.current as { destroy: () => void }).destroy();
+				mapInstance.current = null;
 			}
 		};
 	}, [loadMap]);

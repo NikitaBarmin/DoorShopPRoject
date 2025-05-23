@@ -19,16 +19,16 @@ function ProductCard(props: ProductCardProps) {
 		dispatch(cartActions.add(props.id));
 	};
 	return (
-		<Link to = {`/doors/${props.id}`}>
+		<Link to = {`/doors/${props.id}`} tabIndex={0} aria-label={`Подробнее о двери ${props.name}`}>
 			<div className= {styles['full-card']}>
 				<div className = {styles['card']}>
-					<img className = {styles['card__img']} src= {props.image}  alt=""/>
+					<img className = {styles['card__img']} src= {props.image}  alt={`Межкомнатная дверь ${props.name}`} loading="lazy" />
 					<div className={styles['card__rating']}>
 						{props.rating}
-						<img className = {styles['card-rating__img']}  src="/public/star-icon.svg" alt="" />
+						<img className = {styles['card-rating__img']}  src="/svg-icons/star-icon.svg" alt="Рейтинг двери" loading="lazy" />
 					</div>
-					<button className={styles['add-to-cart']} onClick = {addToCart}>
-						<img src="/public/cart-button-icon.svg" alt="" />
+					<button className={styles['add-to-cart']} onClick = {addToCart} tabIndex={0} aria-label={`Добавить ${props.name} в корзину`}>
+						<img src="/svg-icons/cart-button-icon.svg" alt="Добавить в корзину" loading="lazy" />
 					</button>
 				</div>
 				<div className={styles['card__text']}>
@@ -37,8 +37,6 @@ function ProductCard(props: ProductCardProps) {
 				</div>
 			</div>
 		</Link>
-		
 	);
-
 }
 export default ProductCard;

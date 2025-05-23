@@ -10,7 +10,6 @@ import type { AppDispath } from '../../store/store';
 import { login, userActions } from '../../store/user.slice';
 import type { RootState } from '../../store/store';
 
-
 export type LoginForm = {
 	email: {
 		value: string
@@ -21,6 +20,7 @@ export type LoginForm = {
 }
 
 function Login() {
+	
 
 	/* 	const [error, setError] = useState<string | null>(null); */
 	const navigate = useNavigate();
@@ -38,7 +38,6 @@ function Login() {
 		e.preventDefault();
 		dispatch(userActions.clearLoginError());
 		const target = e.target as typeof e.target & LoginForm;
-		console.log(target);
 		const {email, password} = target;
 		await sendLogin(email.value, password.value);
 	};

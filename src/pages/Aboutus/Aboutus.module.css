@@ -172,7 +172,7 @@
     padding-bottom: 180px;
     background:
         linear-gradient(0deg, rgba(36, 43, 51, 0.9), rgba(36, 43, 51, 0.9)),
-        linear-gradient(180deg, #242B33 10.42%, rgba(36, 43, 51, 0) 50.52%, #242B33 90.1%), url(/public/bg-cta.png
+        linear-gradient(180deg, #242B33 10.42%, rgba(36, 43, 51, 0) 50.52%, #242B33 90.1%), url(/main/bg-cta.webp
 );
 }
 
@@ -221,7 +221,7 @@
 /* TRUST-CARD */
 .trust-card {
     background: linear-gradient(0deg, rgba(36, 43, 51, 0.9), rgba(36, 43, 51, 0.9)),
-        linear-gradient(180deg, #242B33 10.42%, rgba(36, 43, 51, 0) 50.52%, #242B33 90.1%), url(/public/trust-card-bg.png);
+        linear-gradient(180deg, #242B33 10.42%, rgba(36, 43, 51, 0) 50.52%, #242B33 90.1%), url(/main/trust-card-bg.webp);
 }
 
 .trust-card__wrapper {

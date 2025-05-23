@@ -13,6 +13,7 @@ import { type RootState } from '../../store/store';
 import { useState } from 'react';
 
 
+
 function Layout() {
 
 	const navigate = useNavigate();
@@ -36,14 +37,14 @@ function Layout() {
 				<div className={styles['header__wrapper']}>
 					<div className={styles['navbar']}>
 						<div className={styles['logo']}>
-							<img className={styles['logo-img']} src="/logo.svg" alt="" />
+							<img className={styles['logo-img']} src="/svg-icons/logo.svg" alt="Логотип Door Shop" tabIndex={0} loading="lazy" />
 							<div className={styles['experienseAndGaranty']}>
 								<div>
-									<img src="/icons8-гарантия-50.png" alt="" />
+									<img src="/svg-icons/garanty-skill.svg" alt="Гарантия 3 года" tabIndex={0} loading="lazy" />
 									<span className={styles['garanty-text']}>Опыт 20 лет</span>
 								</div>
 								<div>
-									<img src="/icons8-experience-skill-50.png" alt="" />
+									<img src="/svg-icons/experience-skill.svg" alt="Опыт 20 лет" tabIndex={0} loading="lazy" />
 									<span className={styles['experiense-text']}>3 года гарантии</span>
 								</div>
 							</div>
@@ -63,8 +64,8 @@ function Layout() {
 							<ContactButton />
 							<Feedback />
 							<ProfileButton />
-							<Button appearance='small' className={styles['exit']} onClick={logout}>
-								<img src="/public/exit-icon.png" alt="" />
+							<Button appearance='small' className={styles['exit']} onClick={logout} tabIndex={0} aria-label="Выйти из аккаунта">
+								<img src="/svg-icons/exit-icon.svg" alt="Выйти из аккаунта" loading="lazy" />
 								Выход
 							</Button>
 						</div>

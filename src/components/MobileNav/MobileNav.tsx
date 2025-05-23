@@ -46,7 +46,7 @@ function MobileNav({ onClose }: MobileNavProps) { // Убрали указани
 				<Feedback />
 				<ContactButton />
 				<Button appearance='small' className={styles['exit']} onClick={logout}>
-					<img src="/public/exit-icon.png" alt="" />
+					<img src="/public/exit-icon.svg" alt="" />
 					Выход
 				</Button>
 			</div>
