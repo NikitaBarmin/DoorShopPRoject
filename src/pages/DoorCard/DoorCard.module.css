@@ -1,0 +1,113 @@
+.doorcard-wrapper {
+    max-width: 1750px;
+    /* Ограничиваем ширину контента */
+    margin: 0 auto;
+    /* Центрируем контент */
+    padding: 0 20px;
+    /* Отступы слева и справа */
+    display: flex;
+    gap: 100px;
+}
+
+.backwardButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 40px;
+    max-height: 40px;
+    background: #CC9C55;
+    /* ваш цвет фона */
+    border: none;
+    border-radius: 40%;
+    /* если нужны скругленные углы */
+    cursor: pointer;
+}
+
+.backwardButton img {
+    display: block;
+    max-width: 70%;
+    /* регулирует размер картинки относительно кнопки */
+    max-height: 70%;
+    pointer-events: none;
+    /* чтобы клики по картинке работали как по кнопке */
+    filter: invert(1);
+}
+
+.doorcard-content {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.doorcard-content img {
+    width: 300px;
+    /* Фиксированная ширина */
+    height: 400px;
+    /* Фиксированная высота */
+    object-fit: contain;
+    /* Сохраняет пропорции */
+    border: 2px solid linear-gradient(86.93deg, #B8884B 0%, #CC9C55 100%);
+    transition: all 0.2s ease-in;
+    border-radius: 10px;
+    transform: scale(1.05);
+    filter: contrast(105%) brightness(1.1) saturate(1.1);
+}
+
+.doorcard-description {
+    max-width: 600px;
+}
+
+.doorcard-text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+    /*   min-width: 0 */
+}
+
+.doorcard-name {
+    color: #D4C17F;
+}
+
+@media (max-width: 1046px) {
+    .doorcard-wrapper {
+        gap: 40px;
+        /* Уменьшаем отступ */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .doorcard-content {
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+    }
+
+    .doorcard-content img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 3/4;
+        /* Сохраняем пропорции 3:4 */
+    }
+
+    .doorcard-text {
+        gap: 20px;
+        width: 100%;
+    }
+
+    .doorcard-description {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .doorcard-content img {
+        max-width: 250px;
+    }
+
+    .backwardButton {
+        max-width: 35px;
+        max-height: 35px;
+    }
+}

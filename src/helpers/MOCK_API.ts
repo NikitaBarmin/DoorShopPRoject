@@ -1,0 +1,1 @@
+export const PREFIX = 'https://68224909b342dce8004dc80c.mockapi.io/api';

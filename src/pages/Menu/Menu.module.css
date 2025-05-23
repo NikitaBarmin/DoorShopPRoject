@@ -1,0 +1,30 @@
+.menu__wrapper {
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.head {
+    margin-bottom: 100px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+}
+
+@media (max-width: 1087px) {
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 380px));
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 776px) {
+    .head {
+        margin-bottom: 50px;
+        font-size: 48px;
+    }
+}

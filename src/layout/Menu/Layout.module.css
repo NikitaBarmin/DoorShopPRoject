@@ -1,0 +1,254 @@
+.layout-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  background: linear-gradient(180deg,
+      #242b33 11.98%,
+      rgba(45, 52, 60, 0.38) 51.04%,
+      #242b33 92.19%),
+    url(/public/image.png);
+  background-size: cover;
+  /* Масштабируем изображение, чтобы заполнить всю область */
+}
+
+.header__wrapper {
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.content_-wrapper {
+  max-width: 1750px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.navbar {
+  min-height: 70px;
+  padding: 27px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*  position: relative;
+    overflow-x: hidden; */
+}
+
+.navbar-elements {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+@media (max-width: 1220px) {
+  .navbar-elements {
+    display: none;
+  }
+
+  .header__nav-btn {
+    display: block !important;
+  }
+}
+
+
+
+.navbar-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  background-size: cover;
+  /* Чтобы картинка масштабировалась и занимала всю площадь */
+  z-index: -1;
+  /* Помещаем фон под контент */
+}
+
+.navbar-content {
+  /* Добавляем отступы, чтобы контент не прилегал к краям экрана */
+  padding: 20px;
+  /* Пример, можно настроить */
+  position: relative;
+  /* Чтобы контент был над фоном */
+  z-index: 1;
+  /* Контент должен быть над фоном */
+  max-width: 1750px;
+  /* Ограничиваем ширину контента */
+  margin: 0 auto;
+  /* Центрируем контент */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo-img {
+  max-width: 75px
+}
+
+.experienseAndGaranty {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  /* Уменьшаем отступ */
+}
+
+.experienseAndGaranty div {
+  display: flex;
+  align-items: center;
+}
+
+.experienseAndGaranty div img {
+  filter: invert(1);
+  max-width: 40px;
+}
+
+.garanty-text,
+.experiense-text {
+  font-size: 16px;
+  cursor: pointer;
+  cursor: pointer;
+  white-space: nowrap;
+  /* Запрещаем перенос текста на новую строку */
+}
+
+@media (max-width: 776px) {
+
+  .garanty-text,
+  .experiense-text {
+    font-size: 10px;
+  }
+
+  .logo-img {
+    max-width: 55px
+  }
+
+  .experienseAndGaranty div img {
+    filter: invert(1);
+    max-width: 30px;
+  }
+
+}
+
+
+.activate {
+  color: #D4C17F;
+}
+
+.feedback {
+  transition: color 0.2s;
+}
+
+.feedback:hover {
+  color: #D4C17F;
+}
+
+.exit {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* НАВИГАЦИЯ В КНОПКУ НА ПЛАНШЕТКЕ И НИЖЕ */
+
+.header__nav-btn {
+  position: absolute;
+  /* Исправлено: лучше использовать absolute, если header не fixed */
+  top: 50px;
+  right: 15px;
+  display: none;
+  z-index: 100001;
+}
+
+.nav-icon-btn {
+  height: 30px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* Добавлено: чтобы было понятно, что это кнопка */
+}
+
+.nav-icon {
+  position: relative;
+  width: 40px;
+  height: 3px;
+  /* Изменено: задаем высоту для центральной линии */
+  background-color: #D4C17F;
+  /* Изменено: задаем цвет для центральной линии */
+}
+
+.nav-icon::before,
+.nav-icon::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  /* Изменено: задаем высоту для линий */
+  background-color: #D4C17F;
+  /* Изменено: задаем цвет для линий */
+  transition: transform 0.3s ease, top 0.3s ease;
+  /* Добавлено: плавное изменение анимации */
+}
+
+.nav-icon::before {
+  top: calc(1px * -8);
+}
+
+.nav-icon::after {
+  top: calc(1px * 8);
+}
+
+.nav-icon.nav-icon--active {
+  background-color: transparent;
+  /* Добавлено: убираем среднюю линию */
+}
+
+.nav-icon.nav-icon--active::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-icon.nav-icon--active::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+
+
+.content {
+  padding-top: 60px
+}
+
+
+.cart-count_container {
+  display: flex;
+  align-items: center;
+}
+
+.cart-count {
+  background: #D4C17F;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #FAFAFA;
+}

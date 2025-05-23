@@ -1,0 +1,52 @@
+.mobile-menu {
+	position: fixed;
+	background: #242B33;
+	z-index: 1000;
+	/* Поверх всего */
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	/* На всю высоту экрана */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	/* Выравниваем контент сверху */
+	padding-top: 80px;
+	/* Отступ сверху, чтобы контент не перекрывался хедером */
+}
+
+.mobile-menu__content {
+	/* Стили для контента меню */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.activate {
+	color: #FAFAFA;
+	;
+}
+
+.activate:hover {
+	color: #D4C17F;
+}
+
+.cart-count_container {
+	display: flex;
+	align-items: center;
+}
+
+.cart-count {
+	background: #D4C17F;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+	color: #FAFAFA;
+}

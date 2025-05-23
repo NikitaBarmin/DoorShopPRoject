@@ -1,0 +1,16 @@
+.header {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin: 0;
+    color: #D4C17F;
+    /*     margin-bottom: 100px; */
+}
+
+@media (max-width: 776px) {
+    .header {
+        font-size: 24px;
+    }
+
+}

@@ -1,0 +1,448 @@
+.aboutus {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* HER0 */
+.hero {
+    padding-bottom: 180px;
+}
+
+.hero__wrapper {
+    max-width: 1750px;
+    /* Ограничиваем ширину контента */
+    margin: 0 auto;
+    /* Центрируем контент */
+    padding: 0 20px;
+    /* Отступы слева и справа */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* или любые другие пропорции */
+    gap: 60px;
+
+
+}
+
+.hero__wrapper img {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.aboutus_firstBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.aboutus-text {
+    max-width: 450px;
+    font-size: 18px;
+}
+
+.aboutus_secondBlock img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-in;
+    border: 2px solid linear-gradient(86.93deg, #B8884B 0%, #CC9C55 100%);
+
+    &:hover {
+        transform: scale(1.05);
+        filter: contrast(105%) brightness(1.1) saturate(1.1);
+    }
+
+}
+
+.aboutus_thirdBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.aboutus_thirdBlock img {
+    transition: all 0.2s ease-in;
+    border: 2px solid linear-gradient(86.93deg, #B8884B 0%, #CC9C55 100%);
+
+    &:hover {
+        transform: scale(1.05);
+        filter: contrast(105%) brightness(1.1) saturate(1.1);
+    }
+}
+
+
+
+
+/*  SECTION-MAP */
+.section-map {}
+
+.header-margin {
+    margin-bottom: 100px;
+}
+
+
+.section-map__wrapper {
+    padding: 0 20px;
+    max-width: 1750px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+}
+
+.section-map__info {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.section-text {
+    text-align: justify;
+}
+
+.section-map__info>* {
+    width: 50%;
+    /* Задаем ширину 50% для всех прямых дочерних элементов */
+}
+
+/* SECTION-VIDEO */
+.video {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 180px;
+    padding-bottom: 180px;
+}
+
+.video__wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.video__link {
+    position: relative;
+    display: inline-block;
+    /* text-align: center; */
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+
+        background: rgba(36, 43, 51, 0.8);
+        background-repeat: no-repeat;
+        transition: background-color 0.2s ease-in;
+
+    }
+
+    &:hover::before {
+        background: rgba(36, 43, 51, 0.7);
+    }
+
+    &:hover .video__button {
+        transform: translate(-50%, -50%) scale(1.2);
+        filter: saturate(1.5);
+    }
+}
+
+.video__bg {
+    width: 719px;
+    height: 650px;
+}
+
+.video__button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease-in;
+
+}
+
+/* SECTION-CTA */
+
+.cta {
+    min-height: 560px;
+    padding-top: 180px;
+    padding-bottom: 180px;
+    background:
+        linear-gradient(0deg, rgba(36, 43, 51, 0.9), rgba(36, 43, 51, 0.9)),
+        linear-gradient(180deg, #242B33 10.42%, rgba(36, 43, 51, 0) 50.52%, #242B33 90.1%), url(/public/bg-cta.png
+);
+}
+
+.cta__wrapper {
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.cta__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cta__paragrath {
+    max-width: 750px;
+    text-align: justify;
+    font-size: 24px;
+}
+
+
+
+.feedback-button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.25s;
+    border: none;
+    color: var(--white-color);
+    border-radius: 29px;
+    font-style: normal;
+    font-weight: 400;
+    background: linear-gradient(86.93deg, #B8884B 0%, #CC9C55 100%);
+    font-size: 16px;
+    padding: 10px 25px;
+
+}
+
+
+.cta__buttons {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* TRUST-CARD */
+.trust-card {
+    background: linear-gradient(0deg, rgba(36, 43, 51, 0.9), rgba(36, 43, 51, 0.9)),
+        linear-gradient(180deg, #242B33 10.42%, rgba(36, 43, 51, 0) 50.52%, #242B33 90.1%), url(/public/trust-card-bg.png);
+}
+
+.trust-card__wrapper {
+    padding: 0 20px;
+    max-width: 1750px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+}
+
+.trust-cards__display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+}
+
+.footer {
+    padding-top: 72px;
+    padding-bottom: 60px;
+    background: #2D343C;
+    font-size: 14px;
+    line-height: 16.44px;
+    letter-spacing: 0.05em;
+    font-size: 18px;
+    margin-top: auto !important;
+}
+
+.footer__wrapper {
+    max-width: 1750px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*     gap: 30px; */
+}
+
+.footer-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    justify-content: sp;
+}
+
+.footer__img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px
+}
+
+.footer__adress {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer__info {
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    padding: 10px;
+}
+
+
+@media (max-width: 1220px) {
+    .hero__wrapper {
+        grid-template-columns: 1fr 1fr;
+        /* Меняем количество колонок */
+        gap: 40px;
+        /* Уменьшаем отступ */
+    }
+
+    .aboutus-text {
+        font-size: 18px;
+        /* Уменьшаем размер шрифта */
+        text-align: justify;
+    }
+
+    .hero__wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    }
+
+    .aboutus_thirdBlock {
+        gap: 40px;
+        /* Уменьшаем отступ */
+    }
+
+    .section-map__info {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .section-map__info>* {
+        width: 100% !important;
+    }
+
+    .section-text {
+        font-size: 20px;
+        width: 100% !important;
+    }
+
+    .cta__main {
+        display: flex;
+        flex-direction: column;
+        gap: 15px
+    }
+
+    .cta__paragrath {
+        font-size: 20px;
+    }
+
+    .cta {
+        padding-top: 0;
+        padding-bottom: 0;
+
+    }
+
+    .trust-cards__display {
+        grid-template-columns: repeat(2, 1fr);
+        /*  2 колонки */
+    }
+
+    .trust-cards__display>*:nth-child(3) {
+        grid-column: 1 / 3;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .video__bg {
+        height: auto;
+    }
+
+    .video__button {
+        width: 60px;
+        height: 60px;
+    }
+
+
+}
+
+@media (max-width: 776px) {
+    .header-margin {
+        margin-bottom: 40px;
+        /* Уменьшаем отступ */
+    }
+
+    .aboutus-text {
+        /* Уменьшаем размер шрифта */
+        text-align: justify;
+        font-size: 16px;
+    }
+
+    .section-text {
+        font-size: 16px;
+        width: 100% !important;
+    }
+
+    .cta__paragrath {
+        font-size: 16px;
+    }
+
+    .trust-cards__display {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        /* 1 колонка */
+    }
+
+    .trust-cards__display>*:nth-child(3) {
+        grid-column: 1 / 2;
+        margin: 0;
+        width: 400px !important;
+        /*  Чтобы корректно отображался */
+        /* Убираем сдвиг */
+        /*  Сохраняем фиксированную ширину */
+        /* Центрируем элемент по горизонтали */
+    }
+
+    .video__button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer__wrapper {
+        /* Другие стили */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* Одна колонка */
+        grid-template-rows: auto;
+        /* Автоматическое определение высоты строк */
+        gap: 20px;
+        /* Отступы между элементами */
+        align-items: center;
+        /* Выравнивание по вертикали */
+        justify-content: space-around;
+        /* Выравнивание по горизонтали */
+    }
+
+    .footer__img {
+        align-items: flex-start;
+        /*  Меняем align-items на flex-start */
+        gap: 6px
+    }
+
+    .footer__adress p {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 550px) {
+    .footer__wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        /* Автоматическое определение высоты строк */
+        gap: 20px;
+        align-items: center;
+        justify-content: space-around;
+    }
+}

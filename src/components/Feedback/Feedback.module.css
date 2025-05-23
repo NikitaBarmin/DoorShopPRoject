@@ -1,0 +1,82 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modalContent {
+    background: rgb(7, 6, 6);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+    background: #191d22;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.journal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.feedback-input {
+    width: 100%;
+}
+
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.textarea {
+
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    color: #FAFAFA;
+    border: 1px solid #EEE;
+    /* box-shadow: 15px 20px 45px 0px rgba(233, 233, 233, 0.25); */
+    border-radius: 10px;
+    padding: 20px;
+}

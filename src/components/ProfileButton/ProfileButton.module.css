@@ -1,0 +1,48 @@
+.container {
+    position: relative; /* Контейнер для кнопки и панельки */
+    display: inline-block; /* Чтобы занимал только необходимую ширину */
+}
+
+.profile {
+    max-width: 50px;
+    max-height: 50px;
+    filter: invert(80%);
+    cursor: pointer;
+}
+.modal {
+    position: absolute; 
+    width: fit-content;
+    background: #333c46;
+    border-radius: 8px;
+    z-index: 10; 
+    overflow: hidden; 
+    max-height: 0; 
+    opacity: 0; 
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out; 
+}
+.open {
+    max-height: 200px; 
+    opacity: 1;
+}
+  
+.modalContent {
+    padding: 1rem;
+}
+  
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+  
+.socialIcons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
+}
+  
+.socialIcons img:hover {
+    transform: scale(1.1);
+}
