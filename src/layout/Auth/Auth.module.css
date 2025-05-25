@@ -5,7 +5,7 @@
         rgba(45, 52, 60, 0.38) 51.04%,
         #242b33 92.19%
       ),
-      url(/public/auth-background.webp);
+      url(/main/auth-background.webp);
       min-height: 100vh;
       display: flex;
   justify-content: center; /* Горизонтальное центрирование */

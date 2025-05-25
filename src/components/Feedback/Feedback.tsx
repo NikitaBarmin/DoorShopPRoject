@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import styles from './Feedback.module.css';
-import { useRef, useState, type FormEvent } from 'react';
+import { useRef, type FormEvent } from 'react';
 import type { FeedbackProps } from './Feedback.props';
 import Headling from '../Headling/Headling';
 import Input from '../Input/Input';
@@ -10,8 +10,7 @@ import { userActions } from '../../store/user.slice';
 
 
 
-function Feedback({className}: FeedbackProps) {
-	const [showFeedbackWindow, setShowFeedbackWindow] = useState<boolean>(false);
+function Feedback({className, onToggle, show}: FeedbackProps) {
  	const formRef = useRef<HTMLFormElement>(null);
 	const dispatch = useDispatch();
 
@@ -27,18 +26,19 @@ function Feedback({className}: FeedbackProps) {
 		if (formRef.current) {
 			formRef.current.reset();
 		}
+		onToggle();
 
 	};
 	return (
 		<>
 			<button 
 				className={classNames(className, styles.contacts)}
-				onClick={() => setShowFeedbackWindow(!showFeedbackWindow)}
+				onClick={onToggle}
 			>
         Обратная связь
 			</button>
 
-			{showFeedbackWindow && (
+			{show && (
 				<div className={styles.modal}>
 					<div className={styles.modalContent}>
 						<Headling>Форма обратной связи</Headling>
@@ -47,7 +47,7 @@ function Feedback({className}: FeedbackProps) {
 							<textarea name="post" id="" cols = {20} rows={10} className = {styles.textarea}></textarea>
 							<Button appearance='big' type = 'submit'>Отправить</Button>
 						</form> 
-						 <div className={styles.closeButton} onClick={() => setShowFeedbackWindow(!showFeedbackWindow)}>
+						 <div className={styles.closeButton} onClick={onToggle}>
               				×
 						</div>
 					</div>

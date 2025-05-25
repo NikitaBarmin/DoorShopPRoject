@@ -19,7 +19,14 @@ function Layout() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispath>();
 	const items = useSelector((s: RootState) => s.cart.items);
+	const jwt = useSelector((s: RootState) => s.user.jwt);
 	const [isActive, setIsActive] = useState<boolean>(false);
+	const [showDarkScreen, setShowDarkScreen] = useState(false); 
+
+	const toggleDarkScreen = () => {
+		setShowDarkScreen(!showDarkScreen);
+	};
+
 	const toggleMenu = () => {
 		setIsActive(!isActive);
 	};
@@ -30,7 +37,8 @@ function Layout() {
 
 	return (
 		<div className={classNames(styles['layout'], {
-			[styles['layout-mobile']]: isActive
+			[styles['layout-mobile']]: isActive,
+			[styles['layout-darkScreen']]: showDarkScreen
 		})}>
 			{isActive && <MobileNav isActive={isActive} onClose={toggleMenu} />}
 			<header className={styles['header']}>
@@ -62,11 +70,12 @@ function Layout() {
 								Корзина <div className={styles['cart-count']}>{items.reduce((acc, item) => acc += item.count, 0)}</div>
 							</NavLink>
 							<ContactButton />
-							<Feedback />
+							<Feedback onToggle={toggleDarkScreen} show={showDarkScreen} />
 							<ProfileButton />
 							<Button appearance='small' className={styles['exit']} onClick={logout} tabIndex={0} aria-label="Выйти из аккаунта">
-								<img src="/svg-icons/exit-icon.svg" alt="Выйти из аккаунта" loading="lazy" />
-								Выход
+								<img src="/svg-icons/exit-icon.svg" alt="Выйти из аккаунта"/>
+								{jwt && <p>Выход</p>}
+								{!jwt && <p>Вход</p>}
 							</Button>
 						</div>
 					</div>
